@@ -1,0 +1,113 @@
+/* Estilos de escritorio. Bootstrap hace la base; acá va la identidad de la automotora. */
+:root {
+    --ink: #1c2733;
+    --ink-soft: #5b6877;
+    --fondo: #edf0f3;
+    --superficie: #ffffff;
+    --linea: #d9dee4;
+    --acento: #0e5e6f;
+    --acento-oscuro: #0a4856;
+    --nuevo-fondo: #dff3e7;
+    --nuevo-texto: #17653c;
+    --usado-fondo: #fbeccd;
+    --usado-texto: #7a4f00;
+    --vendido-fondo: #e3e6ea;
+    --vendido-texto: #434e5a;
+    --resalte: #fff6d6;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--fondo);
+    color: var(--ink);
+    font-family: "Barlow", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-size: 1.0625rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+main { flex: 1; }
+
+a { color: var(--acento); }
+a:hover { color: var(--acento-oscuro); }
+
+h1, h2 { font-weight: 600; letter-spacing: -0.01em; }
+
+/* Botón principal con el color de la marca */
+.btn-primary {
+    --bs-btn-bg: var(--acento);
+    --bs-btn-border-color: var(--acento);
+    --bs-btn-hover-bg: var(--acento-oscuro);
+    --bs-btn-hover-border-color: var(--acento-oscuro);
+    --bs-btn-active-bg: var(--acento-oscuro);
+    --bs-btn-active-border-color: var(--acento-oscuro);
+    --bs-btn-disabled-bg: var(--acento);
+    --bs-btn-disabled-border-color: var(--acento);
+    --bs-btn-focus-shadow-rgb: 14, 94, 111;
+}
+.btn-outline-secondary {
+    --bs-btn-color: var(--ink);
+    --bs-btn-border-color: #aeb7c0;
+}
+
+/* Cabecera */
+.cabecera { background: var(--ink); }
+.cabecera .navbar-brand { color: #fff; font-weight: 700; font-size: 1.35rem; letter-spacing: 0.01em; }
+.cabecera .nav-link { color: #c9d2db; }
+.cabecera .nav-link:hover { color: #fff; }
+.cabecera .nav-link.activo { color: #fff; box-shadow: inset 0 -3px 0 #4fb3c7; }
+
+/* Listado */
+.panel {
+    background: var(--superficie);
+    border: 1px solid var(--linea);
+    border-radius: 10px;
+}
+.tabla-autos { margin: 0; }
+.tabla-autos thead th {
+    font-weight: 600;
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+    border-bottom: 2px solid var(--linea);
+    padding: 0.85rem 1rem;
+    white-space: nowrap;
+}
+.tabla-autos td { padding: 0.85rem 1rem; vertical-align: middle; }
+.tabla-autos tbody tr[data-id] { cursor: pointer; }
+.tabla-autos tbody tr[data-id]:hover { background: #f4f8fa; }
+.tabla-autos .num { text-align: right; font-variant-numeric: tabular-nums; }
+.enlace-modelo { font-weight: 600; text-decoration: none; }
+.enlace-modelo:hover { text-decoration: underline; }
+.fila-nueva { background: var(--resalte); }
+
+/* Etiquetas de estado */
+.etiqueta {
+    display: inline-block;
+    padding: 0.2rem 0.65rem;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+.etiqueta-nuevo   { background: var(--nuevo-fondo);   color: var(--nuevo-texto); }
+.etiqueta-usado   { background: var(--usado-fondo);   color: var(--usado-texto); }
+.etiqueta-vendido { background: var(--vendido-fondo); color: var(--vendido-texto); }
+
+/* Detalle */
+.ficha-titulo { font-size: 2.1rem; margin: 0; }
+.ficha-precio { font-size: 1.9rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+.datos { margin: 0; }
+.datos .fila { display: flex; gap: 1rem; padding: 0.8rem 0; border-bottom: 1px solid var(--linea); }
+.datos .fila:last-child { border-bottom: 0; }
+.datos dt { flex: 0 0 11rem; font-weight: 500; color: var(--ink-soft); }
+.datos dd { margin: 0; font-weight: 500; }
+
+/* Formularios */
+.form-label { font-weight: 600; }
+.form-control:focus, .form-select:focus {
+    border-color: var(--acento);
+    box-shadow: 0 0 0 0.2rem rgba(14, 94, 111, 0.2);
+}
+
+footer { border-top: 1px solid var(--linea); }

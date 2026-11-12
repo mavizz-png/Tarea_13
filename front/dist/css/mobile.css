@@ -1,0 +1,18 @@
+/* Estilos mobile */
+@media (max-width: 767.98px) {
+    body { font-size: 1rem; }
+
+    .ficha-titulo { font-size: 1.6rem; }
+    .ficha-precio { font-size: 1.5rem; }
+
+    /* La tabla pasa a tarjetas apiladas */
+    .tabla-autos thead { display: none; }
+    .tabla-autos, .tabla-autos tbody, .tabla-autos tr, .tabla-autos td { display: block; width: 100%; }
+    .tabla-autos tbody tr[data-id] { padding: 0.6rem 0; border-bottom: 1px solid var(--linea); }
+    .tabla-autos tbody tr:last-child { border-bottom: 0; }
+    .tabla-autos td { display: flex; justify-content: space-between; gap: 1rem; padding: 0.3rem 1rem; text-align: right !important; }
+    .tabla-autos td::before { content: attr(data-label); font-weight: 500; color: var(--ink-soft); text-align: left; }
+
+    .datos .fila { flex-direction: column; gap: 0.1rem; }
+    .datos dt { flex: none; }
+}
